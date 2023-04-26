@@ -7,11 +7,12 @@
 	<script src="weather.js"></script>
 </head>
 <body>
-	<div id="container">
-		<h1>Weather App</h1>
-		<input type="text" id="location" placeholder="Enter a location">
-		<button id="submit">Get Weather</button>
-		<div id="weather"></div>
-	</div>
+	<h1>Weather App</h1>
+	<form>
+		<label for="location">Enter Location:</label>
+		<input type="text" id="location" name="location" placeholder="City, Country">
+		<button type="submit" id="submit">Get Weather</button>
+	</form>
+	<div id="weather"></div>
 </body>
 </html>
