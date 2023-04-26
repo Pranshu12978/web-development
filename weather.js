@@ -1,14 +1,51 @@
 $(document).ready(function() {
-	$('form').submit(function(event) {
-		event.preventDefault();
+	$('#submit').click(function() {
 		var location = $('#location').val();
-		var url = 'https://api.openweathermap.org/data/2.5/weather?q=' + location + '&appid=202dd79001cf76ca1878bed8b00ea2fe&units=metric';
-		$.getJSON(url, function(data) {
-			var temp = data.main.temp;
-			var desc = data.weather[0].description;
-			var icon = data.weather[0].icon;
-			var iconUrl = 'http://openweathermap.org/img/w/' + icon + '.png';
-			$('#weather').html('<p>Temperature: ' + temp + ' &deg;C</p><p>Description: ' + desc + '</p><img src="' + iconUrl + '">');
-		});
+		if (location != '') {
+			$.ajax({
+				url: 'https://api.openweathermap.org/data/2.5/weather',
+				data: {
+					q: location,
+					appid: '202dd79001cf76ca1878bed8b00ea2fe',
+					units: 'metric'
+				},
+				type: 'GET',
+				dataType: 'jsonp',
+				success: function(data) {
+					var weather = '';
+					var bgImage = '';
+					var iconUrl = 'https://openweathermap.org/img/w/' + data.weather[0].icon + '.png';
+
+					weather += '<h2>Current Weather for ' + data.name + '</h2>';
+					weather += '<p>Weather: ' + data.weather[0].description + '</p>';
+					weather += '<p>Temperature: ' + data.main.temp + '&deg;C</p>';
+					weather += '<p>Humidity: ' + data.main.humidity + '%</p>';
+					weather += '<p>Wind Speed: ' + data.wind.speed + ' m/s</p>';
+					weather += '<img src="' + iconUrl + '">';
+
+					var conditionCode = data.weather[0].id;
+					if (conditionCode >= 200 && conditionCode <= 232) {
+						bgImage = 'thunderstorm.jpg';
+					} else if (conditionCode >= 300 && conditionCode <= 531) {
+						bgImage = 'rain.jpg';
+					} else if (conditionCode >= 600 && conditionCode <= 622) {
+						bgImage = 'snow.jpg';
+					} else if (conditionCode >= 701 && conditionCode <= 781) {
+						bgImage = 'fog.jpg';
+					} else if (conditionCode === 800) {
+						bgImage = 'clear.jpg';
+					} else if (conditionCode >= 801 && conditionCode <= 804) {
+						bgImage = 'cloudy.jpg';
+					} else {
+						bgImage = 'default.jpg';
+					}
+
+					$('body').css('background-image', 'url(' + bgImage + ')');
+					$('#weather').html(weather);
+				}
+			});
+		} else {
+			alert('Please enter a location.');
+		}
 	});
 });
