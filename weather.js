@@ -2,7 +2,7 @@ $(document).ready(function() {
 	$('form').submit(function(event) {
 		event.preventDefault();
 		var location = $('#location').val();
-		var url = 'https://api.openweathermap.org/data/2.5/weather?q=' + location + '&appid=API_KEY&units=metric';
+		var url = 'https://api.openweathermap.org/data/2.5/weather?q=' + location + '&appid=WEATHER_API&units=metric';
 		$.getJSON(url, function(data) {
 			var temp = data.main.temp;
 			var desc = data.weather[0].description;
