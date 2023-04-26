@@ -4,11 +4,7 @@ $(document).ready(function() {
 		if (location != '') {
 			$.ajax({
 				url: 'https://api.openweathermap.org/data/2.5/weather',
-				data: {
-					q: location,
-					appid: 202dd79001cf76ca1878bed8b00ea2fe,
-					units: 'metric'
-				},
+				var url = 'https://api.openweathermap.org/data/2.5/weather?q=' + location + '&appid=202dd79001cf76ca1878bed8b00ea2fe&units=metric'; $.getJSON(url, function(data) {
 				type: 'GET',
 				dataType: 'jsonp',
 				success: function(data) {
