@@ -1,65 +1,73 @@
+html,
 body {
-	font-family: Arial, sans-serif;
-	margin: 0;
-	padding: 0;
-	background-image: url("https://million-wallpapers.com/wallpapers/4/51/14321950841958082428/benches-under-yellowed-trees-in-the-city-park.jpg");
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center center;
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
+body {
+  font-family: Arial, sans-serif;
+  background-image: url("https://api.time.com/wp-content/uploads/2016/09/weather-05.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
 h1 {
-	text-align: center;
-	margin-top: 30px;
+  text-align: center;
+  margin-top: 30px;
 }
 
 form {
-	text-align: center;
-	margin-top: 30px;
+  text-align: center;
+  margin-top: 30px;
 }
 
 label {
-	display: inline-block;
-	margin-right: 10px;
+  display: inline-block;
+  margin-right: 10px;
 }
 
 input[type="text"] {
-	padding: 5px;
-	border-radius: 5px;
-	border: none;
-	box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+  padding: 5px;
+  border-radius: 5px;
+  border: none;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
 }
 
 button[type="submit"] {
-	padding: 5px 10px;
-	border-radius: 5px;
-	border: none;
-	background-color: #3498db;
-	color: #fff;
-	cursor: pointer;
-	box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
-	transition: background-color 0.3s ease;
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: none;
+  background-color: #3498db;
+  color: #fff;
+  cursor: pointer;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s ease;
 }
 
 button[type="submit"]:hover {
-	background-color: #2980b9;
+  background-color: #2980b9;
 }
 
 #weather {
-	margin-top: 30px;
-	padding: 10px;
-	border-radius: 5px;
-	border: 1px solid #ccc;
-	box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+  margin-top: 30px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
 }
 
 #weather p {
-	margin: 0;
-	padding: 5px 0;
+  margin: 0;
+  padding: 5px 0;
 }
 
 #weather img {
-	display: block;
-	margin: 0px auto;
+  display: block;
+  margin: 10px auto;
 }
