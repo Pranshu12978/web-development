@@ -2,7 +2,12 @@ body {
 	font-family: Arial, sans-serif;
 	margin: 0;
 	padding: 0;
+	background-image: url("https://api.time.com/wp-content/uploads/2016/09/weather-05.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
 }
+
 
 h1 {
 	text-align: center;
