@@ -6,7 +6,7 @@ $(document).ready(function() {
 				url: 'https://api.openweathermap.org/data/2.5/weather',
 				data: {
 					q: location,
-					appid: '202dd79001cf76ca1878bed8b00ea2fe',
+					appid: 202dd79001cf76ca1878bed8b00ea2fe,
 					units: 'metric'
 				},
 				type: 'GET',
